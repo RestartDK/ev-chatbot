@@ -1,0 +1,14 @@
+[data-testid="stAppViewContainer"] {
+    background-color: #b356ff;
+    background-size: cover;
+    opacity: 0.9;
+    background-image: repeating-radial-gradient(circle at 0 0, transparent 0, #b356ff 29px), repeating-linear-gradient(#ad10cf55, #ad10cf);
+}
+
+[data-testid="stHeader"] {
+    background-color: rgba(0, 0, 0, 0);
+}
+
+[class="st-emotion-cache-vj1c9o ea3mdgi6"] {
+    background-color: rgba(0, 0, 0, 0);
+}
