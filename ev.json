@@ -1,0 +1,92 @@
+[
+    {
+        "model": "Tesla Model 3",
+        "price": "$44,990",
+        "range": "358 miles",
+        "features": ["Autopilot", "Supercharging", "All-Wheel Drive"]
+    },
+    {
+        "model": "Chevrolet Bolt EV",
+        "price": "$31,500",
+        "range": "259 miles",
+        "features": ["One Pedal Driving", "Regen on Demand", "10.2-inch diagonal color touch-screen"]
+    },
+    {
+        "model": "Nissan Leaf",
+        "price": "$27,400",
+        "range": "149 miles",
+        "features": ["ProPILOT Assist", "e-Pedal", "Apple CarPlay integration"]
+    },
+    {
+        "model": "Ford Mustang Mach-E",
+        "price": "$42,895",
+        "range": "300 miles",
+        "features": ["Ford Co-Pilot360", "Next-Generation SYNC", "Mobile Power Cord"]
+    },
+    {
+        "model": "BMW i3",
+        "price": "$44,450",
+        "range": "153 miles",
+        "features": ["eDrive technology", "ConnectedDrive Services", "BMW Navigation system"]
+    },
+    {
+        "model": "Audi e-tron",
+        "price": "$65,900",
+        "range": "222 miles",
+        "features": ["quattro all-wheel drive", "MMI Navigation plus", "Virtual cockpit plus"]
+    },
+    {
+        "model": "Hyundai Kona Electric",
+        "price": "$34,000",
+        "range": "258 miles",
+        "features": ["Regenerative Braking", "Bluelink Connected Car System", "10.25-inch touchscreen"]
+    },
+    {
+        "model": "Kia EV6",
+        "price": "$40,900",
+        "range": "310 miles",
+        "features": ["Dual Motor AWD", "Ultra Fast Charging", "Augmented Reality Head-Up Display"]
+    },
+    {
+        "model": "Volkswagen ID.4",
+        "price": "$39,995",
+        "range": "260 miles",
+        "features": ["IQ.DRIVE Advanced Drivers Assistance", "ID.Light", "Heated front seats"]
+    },
+    {
+        "model": "Porsche Taycan",
+        "price": "$82,700",
+        "range": "227 miles",
+        "features": ["Porsche Communication Management", "Adaptive air suspension", "Mobile Charger Connect"]
+    },
+    {
+        "model": "Lucid Air",
+        "price": "$77,400",
+        "range": "406 miles",
+        "features": ["Glass Canopy Roof", "Lucid DreamDrive", "Surreal Sound"]
+    },
+    {
+        "model": "Rivian R1T",
+        "price": "$67,500",
+        "range": "314 miles",
+        "features": ["Quad-Motor AWD", "Gear Guard", "Rivian Elevation 360° Audio"]
+    },
+    {
+        "model": "Mercedes EQS",
+        "price": "$102,310",
+        "range": "350 miles",
+        "features": ["MBUX Hyperscreen", "HEPA Filtration", "4MATIC All-Wheel Drive"]
+    },
+    {
+        "model": "Polestar 2",
+        "price": "$45,900",
+        "range": "265 miles",
+        "features": ["Pixel LED headlights", "Google Built-In", "Harman Kardon Premium Sound"]
+    },
+    {
+        "model": "Volvo XC40 Recharge",
+        "price": "$51,700",
+        "range": "208 miles",
+        "features": ["Google Maps and Google Assistant", "Volvo On Call", "All-Wheel Drive"]
+    }
+]

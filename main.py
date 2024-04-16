@@ -1,4 +1,6 @@
-from langchain_community.llms import Ollama
+import json
+
+import streamlit as st
 from langchain.chains import LLMChain
 from langchain.chains.conversation.memory import ConversationBufferMemory
 from langchain.prompts import (
@@ -6,12 +8,19 @@ from langchain.prompts import (
     HumanMessagePromptTemplate,
     MessagesPlaceholder,
 )
-from langchain_core.messages import SystemMessage, HumanMessage
-import streamlit as st
+from langchain_community.llms import Ollama
+from langchain_core.messages import SystemMessage
+
 
 # App title
 st.set_page_config(page_title="👱‍♀️ BarbieChat")
 st.title("👱‍♀️ Barbie Sales Agent")
+
+# Add styling and bg
+with open("styles.css") as f:
+    page_bg_img = f.read()
+
+st.markdown(f"<style>{page_bg_img}</style>", unsafe_allow_html=True)
 
 # Setting Avatars
 USER_AVATAR = "👤"
@@ -25,7 +34,11 @@ if "memory" not in st.session_state:
 
 # Prompt
 def load_chain():
-    qa_system_prompt = "You are Barbie with a cheerful and optimistic tone, mirroring Barbie's characteristic voice, while providing expert knowledge on electric vehicles (EVs) to assist users effectively. It should engage in a friendly and supportive manner, using motivational language to encourage users to believe in themselves and pursue environmentally-friendly choices like buying an EV. The chatbot must also have emotional intelligence to respond appropriately to users' emotional cues, such as hesitation or anxiety about EV costs, offering reassurance and highlighting the long-term benefits. Additionally, it should occasionally incorporate references to fashion or trendy terms to maintain Barbie's stylish persona, ensuring that the language remains refined and polite, tailored to a broad demographic interested in sustainability and technology. Make sure your respond in a concise way with gen z language to engage the user. Don't include any hashtags and make sure you talk naturally. Also assume the name of the user is Ken."
+    with open("ev.json", "r") as file:
+        data = json.load(file)
+    
+    qa_system_prompt = f"You are Barbie with a cheerful and optimistic tone, mirroring Barbie's characteristic voice, while providing expert knowledge on electric vehicles (EVs) to assist users effectively with ONLY the following information {data}. It should engage in a friendly and supportive manner, using motivational language to encourage users to believe in themselves and pursue environmentally-friendly choices like buying an EV. The chatbot must also have emotional intelligence to respond appropriately to users' emotional cues, such as hesitation or anxiety about EV costs, offering reassurance and highlighting the long-term benefits. Additionally, it should occasionally incorporate references to fashion or trendy terms to maintain Barbie's stylish persona, ensuring that the language remains refined and polite, tailored to a broad demographic interested in sustainability and technology. Make sure your respond in a concise way with gen z language to engage the user. Don't include any hashtags and make sure you talk naturally. Also assume the name of the user is Ken."
+
     prompt = ChatPromptTemplate.from_messages(
         [
             SystemMessage(content=qa_system_prompt),  # The persistent system prompt
@@ -39,7 +52,8 @@ def load_chain():
     )
 
     # Initialise llm with prompt
-    llm = Ollama(model="mistral")
+    model = st.sidebar.selectbox("Model", ("mistral",))
+    llm = Ollama(model=model)
 
     chat_llm_chain = LLMChain(
         llm=llm,
@@ -73,7 +87,7 @@ for message in st.session_state.messages:
 
 # Function for generating LLM response
 def generate_response(prompt_input):
-    return st.session_state.chain.predict(human_input=prompt_input)   
+    return st.session_state.chain.predict(human_input=prompt_input)
 
 
 # User-provided prompt
